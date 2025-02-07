@@ -311,3 +311,24 @@ span.image {
     border: 0;
   }
 }
+
+.likes-container {
+  display: flex;
+  align-items: center;
+}
+
+.likes-container .ml-2 {
+  margin-left: 8px; /* Bootstrapのml-2クラスを使用 */
+}
+
+.btn-like {
+  background-color: rgb(255, 78, 78) !important;
+  color: white !important;
+  border-color: red !important;
+}
+
+.btn-unlike {
+  background-color: rgb(95, 95, 255) !important;
+  color: white !important;
+  border-color: blue !important;
+}

@@ -10,8 +10,15 @@
   <span class="timestamp">
     Posted <%= time_ago_in_words(micropost.created_at) %> ago.
     <% if current_user?(micropost.user) %>
-      <%= link_to "delete", micropost, data: { "turbo-method": :delete,
-                                               turbo_confirm: "You sure?" } %>
+      <%= link_to "delete", micropost, data: { "turbo-method": :delete, turbo_confirm: "You sure?" } %>
     <% end %>
   </span>
+  <div class="likes-container d-flex align-items-center">
+    <% if micropost.id.odd? %>
+      <%= button_to "Unlike", {method: :delete}, {class: "btn btn-unlike"} %>
+    <% else %>
+      <%= button_to "Like", {method: :post}, {class: "btn btn-like"} %>
+    <% end %>
+    <spann class="ml-2"><%= micropost.id %> likes</span>
+  </div>
 </li>
